@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import MainApp from './components/MainApp.vue'
 import SingleProject from './Pages/SingleProject.vue'
-
+import NotFound from './Pages/NotFound.vue'
 
 
 const router = createRouter({
@@ -18,11 +18,11 @@ const router = createRouter({
             name: 'single-Project',
             component: SingleProject
          },
-        // {
-        //     path: "/:pathMatch(.*)*",
-        //     name: "not-found",
-        //     component: NotFound
-        // }
+        {
+            path: "/:pathMatch(.*)*",
+            name: "not-found",
+            component: NotFound
+        }
     ]
 });
 
