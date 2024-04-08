@@ -38,6 +38,8 @@ import axios from 'axios';
         <div v-for="element in project.technologias">
             <span>{{ element.name }}</span>
         </div>
+
+    <img :src="`http://127.0.0.1:8000/storage/images/${project.thumb}`" alt="Title" />
 </template>
 
 <style scoped>
