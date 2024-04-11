@@ -43,6 +43,13 @@ export default {
                         </router-link>
                     </li> -->
 
+
+                    <li>
+                        <router-link :to="{ name: 'contact-us' }">
+                            Contatti
+                        </router-link>
+                    </li> 
+
                 </ul>
 
         
