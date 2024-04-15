@@ -33,15 +33,33 @@ import axios from 'axios';
 </script>
 
 <template>
-    <h1>Titolo:{{ project.title }}</h1>
-    <span>Descrizione:{{ project.description }}</span>
-        <div v-for="element in project.technologias">
-            <span>{{ element.name }}</span>
-        </div>
+    <div class="container">
+        <h1>Titolo:{{ project.title }}</h1>
+        <span>Descrizione:{{ project.description }}</span>
+            <div class="tag" >
+                <span v-for="element in project.technologias">{{ element.name }}</span>
+            </div>
+        <img :src="`http://127.0.0.1:8000/storage/images/${project.thumb}`" alt="Title" />
 
-    <img :src="`http://127.0.0.1:8000/storage/images/${project.thumb}`" alt="Title" />
+    </div>
 </template>
 
 <style scoped>
-    
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .tag{
+        display: flex;
+        gap: 10px;
+    }
+
+    .tag span{
+        background-color: red;
+        border-radius: 999rem;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
 </style>

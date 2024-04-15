@@ -25,30 +25,43 @@ import axios from 'axios';
 
 <template>
     
+        <div class="container">
+            <div class="containerdue">
+                <div class="divuno" v-for="(element,index) in arrayPosts">
+                    <router-link :to="{ name: 'single-Project', params: { slug: element.slug } }">
+                    <span>{{ element.title }}</span>
+                    </router-link>
 
-        <div class="divuno" v-for="(element,index) in arrayPosts">
-            <router-link :to="{ name: 'single-Project', params: { slug: element.slug } }">
-            <span>{{ element.title }}</span>
-            </router-link>
-
-            <div class="tag">
-                <div v-for="(elements,index) in element.technologias"> 
-                    <span>{{ elements.name }}</span>
+                    <div class="tag">
+                        <div v-for="(elements,index) in element.technologias"> 
+                            <span>{{ elements.name }}</span>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-            
         </div>
-
     
     
 
 </template>
 
 <style scoped>
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerdue{
+        display: flex;
+        flex-direction: column;
+        
+    }
     .divuno{
         display: flex;
-        gap: 40px;
-        margin: 20px 20px;
+        gap: 20px;
+        margin: 20px;
     }
     .divuno span:last-child{
         background-color: red;
